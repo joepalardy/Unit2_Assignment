@@ -1,0 +1,186 @@
+---
+title: "Unit 2 Application"
+output:
+  md_document:
+    variant: gfm
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ISLR)
+set.seed(1)
+```
+
+## We are going to be doing ISLR Question #10 for Chapter 4, but we are going to be updating the dataset.
+
+
+## Question 1
+
+Load the data "DJ_Weekly.csv" that is in the data folder into R using RStudio's GUI. Make sure the variables are the correct type and the Date is a date.
+A. Use glimpse to show that you have loaded the data correctly. Do not print out the full data set.
+
+
+### Answer
+
+```{r Q1}
+
+```
+
+
+
+*************************************
+
+## Question 2
+
+Using mutate, create a new data set that contains the following:
+A. Returns. (Hint: Use lag to find the previous periods value. A return is the percentage change from the previous period.)
+B. Direction. Use ifelse() to create a variable that is "Up" if the return was positive and "Down" if it was negative.(You may want Direction as a factor.)
+C. Lag1. Use lag to add a column with the lagged value of return.
+D. Lag2. Use lag(.,2) to add a column with the two period lag.
+E. Remove `Adj Close` using select.
+F. Remove rows with missing observations using drop_na().
+G. Save the resulting data and use head() to print the first few rows.
+
+
+### Answer
+
+```{r Q2}
+
+
+```
+
+
+
+
+*************************************
+
+
+
+## Question 3
+
+Using data set from Q #2, do the following:
+
+A. Use ggplot to create a scatter plot with Date on the X axis and return on the Y axis.
+B. Remove Date and use GGally's ggpairs to create a scatter plot matrix for your data.
+C. Do you notice any patterns?
+
+
+### Answer
+
+```{r Q3}
+
+```
+
+
+
+
+*************************************
+
+
+## Question 4
+
+
+Using data set from Q #2, do the following:
+
+A. Use dplyr and summarise to calculate the frequency of "Up" and "Down".
+B. Use dplyr with group_by and summarise to find the average return and average volume for "Up" and "Down" weeks.
+C. Use dplyr with group_by and summarise to find the standard deviation of return and volume for "Up" and "Down" weeks.
+D. Do you notice any patterns?
+
+### Answer
+
+```{r Q4}
+
+```
+
+
+
+
+*************************************
+
+
+## Question 5
+
+Using data set from Q #2, do the following:
+A. Perform a logistic regression with Direction as the response and the two lag variables plus Volume
+as predictors.
+B. Do any of the predictors appear to be statistically significant? If so,
+which ones? (p-values less than .05)
+C. Compute the confusion matrix and overall fraction of correct
+predictions. Explain what the confusion matrix is telling you
+about the types of mistakes made by logistic regression. (Hint: the yardstick package has a confusion matrix function conf_mat(data, truth, estimate))
+
+
+### Answer
+
+```{r Q5}
+
+```
+
+
+
+
+*************************************
+
+
+
+## Question 6
+
+For Questions #6 and #7 you may either use base R, modelR and broom, or tidymodels.
+
+Using data set from Q #2, do the following:
+
+A. Fit the logistic regression model using a training data period
+from 1990 to 2018, with Lag2 as the only predictor. (Hint: use as.Date("1jan2000", "%d%b%Y") in a filter)
+B. Compute the confusion matrix and the overall fraction of correct predictions
+for the held out data (that is, the data from 2019, 2020, and 2021).
+
+
+
+### Answer
+
+```{r Q6}
+
+```
+
+
+
+
+*************************************
+
+
+## Question 7
+
+Repeat question #6 using LDA.
+
+
+### Answer
+
+```{r Q7}
+
+```
+
+
+
+
+*************************************
+
+
+## Question 8
+
+Do you feel that QDA or KNN would preform any better for predicting the stock market direction? Why or why not.
+
+
+
+### Answer (text only)
+
+
+
+
+
+*************************************
+
+
